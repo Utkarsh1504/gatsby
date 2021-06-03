@@ -112,7 +112,7 @@ const newPreviewAvailableClick = ({ isOnPrettyUrl, sitePrefix }) => {
   }
 }
 
-export default function Indicator({ children, stopPolling = false }) {
+export default function Indicator() {
   const [buildInfo, setBuildInfo] = useState()
   const timeoutRef = useRef()
   const shouldPoll = useRef(false)
@@ -154,7 +154,6 @@ export default function Indicator({ children, stopPolling = false }) {
     pollData()
 
     return function cleanup() {
-      if (stopPolling) return
       shouldPoll.current = false
 
       if (timeoutRef.current) {
