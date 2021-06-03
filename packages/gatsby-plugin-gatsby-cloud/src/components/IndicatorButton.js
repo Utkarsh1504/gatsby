@@ -82,7 +82,6 @@ const spinnerIcon = (
 
 const IndicatorButton = ({
   buttonIndex,
-  isFirstButton,
   tooltipText,
   overrideShowTooltip = false,
   tooltipLink,
@@ -95,6 +94,7 @@ const IndicatorButton = ({
   testId,
 }) => {
   const [showTooltip, setShowTooltip] = useState(false)
+  const isFirstButton = buttonIndex === 0
   const marginTop = isFirstButton ? `0px` : `8px`
 
   const onMouseEnter = () => setShowTooltip(true)

@@ -23,15 +23,9 @@ export function PreviewIndicator({ children }) {
         data-gatsby-preview-indicator="root"
         aria-live="assertive"
       >
-        {React.Children.map(children, (child, i) => {
-          let isFirstButton = false
-          if (i === 0) isFirstButton = true
-          return React.cloneElement(child, {
-            ...child.props,
-            isFirstButton,
-            buttonIndex: i,
-          })
-        })}
+        {React.Children.map(children, (child, i) =>
+          React.cloneElement(child, { ...child.props, buttonIndex: i })
+        )}
         {children}
       </div>
     </>
@@ -39,14 +33,7 @@ export function PreviewIndicator({ children }) {
 }
 
 export function GatsbyIndicatorButton(props) {
-  return (
-    <IndicatorButton
-      testId="gatsby"
-      iconSvg={gatsbyIcon}
-      isFirstButton={true}
-      {...props}
-    />
-  )
+  return <IndicatorButton testId="gatsby" iconSvg={gatsbyIcon} {...props} />
 }
 
 export function LinkIndicatorButton(props) {
