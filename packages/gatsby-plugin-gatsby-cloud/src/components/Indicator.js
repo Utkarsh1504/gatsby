@@ -26,7 +26,6 @@ export function PreviewIndicator({ children }) {
         {React.Children.map(children, (child, i) =>
           React.cloneElement(child, { ...child.props, buttonIndex: i })
         )}
-        {children}
       </div>
     </>
   )
