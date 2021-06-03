@@ -81,7 +81,7 @@ const spinnerIcon = (
 )
 
 const IndicatorButton = ({
-  toolTipOffset,
+  buttonIndex,
   isFirstButton,
   tooltipText,
   overrideShowTooltip = false,
@@ -128,7 +128,7 @@ const IndicatorButton = ({
           overrideShowTooltip={overrideShowTooltip}
           showTooltip={showTooltip}
           tooltipIcon={tooltipIcon}
-          toolTipOffset={toolTipOffset}
+          buttonIndex={buttonIndex}
           tooltipLink={tooltipLink}
           tooltipLinkImage={tooltipLinkImage}
           onClick={onClick}
